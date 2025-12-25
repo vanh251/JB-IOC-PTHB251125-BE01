@@ -211,7 +211,8 @@ as
 $$
 begin
     update room
-    set room_status = 'Booked';
+    set room_status = 'Booked'
+    where room_id = new.room_id;
     return new;
 end;
 $$ language plpgsql;
